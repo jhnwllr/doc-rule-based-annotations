@@ -28,7 +28,7 @@ Write summary after finished first draft.
 
 https://www.gbif.org/[The Global Biodiversity Information Facility] (GBIF) is a vital data infrastructure for researchers, conservationists, and policymakers across the globe. It aggregates and mediates access to extensive datasets of biodiversity occurrence records, thereby fostering scientific research, conservation efforts, and informed decision-making. Nevertheless, the quality of these records is pivotal for their "fitness for use", and data cleaning becomes an essential process to ensure their reliability and utility.
 
-In recent years, the significance of occurrence data quality in scientific research and decision-making has gained  recognition. As the volume and complexity of occurrence data continue to grow, the need for automated data cleaning tools has become more pronounced. R packages like https://docs.ropensci.org/CoordinateCleaner/[CoordinateCleaner] (2018) have played a key role in addressing this need, providing efficient and user-friendly solutions for common data quality issues. 
+In recent years, the significance of occurrence data quality in scientific research and decision-making has gained recognition. As the volume and complexity of occurrence data continue to grow, the need for automated data cleaning tools has become more pronounced. R packages like https://docs.ropensci.org/CoordinateCleaner/[CoordinateCleaner] (2018) have played a key role in addressing this need, providing efficient and user-friendly solutions for common data quality issues. 
 
 .Lions in Europe and North America? It is common for GBIF maps to be confusing for users. Most GBIF users are not interested in records from zoos, fossils, or locations that might just be wrong, and GBIF mediated data is often not consistently rich enough to filter unwanted records.
 image::image2.png[width=80%]
@@ -67,7 +67,7 @@ image::image3.png[width=80%]
 
 Another way to limited the complexity of an annotation system is too limit the scope. 
 
-We've made a deliberate choice to concentrate on location rule-based annotations for biodiversity occurrences. This decision stems from our goal to streamline and focus our efforts while addressing the most https://github.com/gbif/portal-feedback/issues?q=is%3Aissue+location+[a prevalent type of feedback we receive at GBIF]. 
+We've made a deliberate choice to concentrate on *location* rule-based annotations for biodiversity occurrences. This decision stems from our goal to streamline and focus our efforts while addressing the most https://github.com/gbif/portal-feedback/issues?q=is%3Aissue+location+[a prevalent type of feedback we receive at GBIF]. 
 
 It's important to note, however, that the concept of rule-based annotations is inherently extensible. While our initial focus centers on location data, the same framework and principles can be applied to other areas of data quality improvement within the GBIF context. This adaptability allows us to remain responsive to evolving user needs and feedback, ensuring that our efforts can be broadened to encompass other data quality challenges in the future. Ultimately, our aim is to create a flexible and scalable solution that can continue to benefit the biodiversity community as a whole.
 
@@ -191,9 +191,9 @@ Additionally, voting could provide protection against **vandalism**.
 
 ==== Higher taxonomy 
 
-Another useful feature would be the ability to *cast* a `rule` down to all child taxa. Annotating higher taxonomy is harder than annotating at the species level because you have to be cofident, the annotation at the higher level fits all child taxa. 
+Another useful feature would be the ability to *cast* a `rule` down to all child taxa. Annotating higher taxonomy is harder than annotating at the species level because you have to be confident, the annotation at the higher level fits all child taxa. 
 
-.A map of amphibian occurrences on GBIF. It is well known there are no amphibians in Antartica. However, we see from the map that one occurrence point still appears there in error. 
+.A map of amphibian occurrences on GBIF. It is well known there are no amphibians in Antarctica. However, we see from the map that one occurrence point still appears there in error. 
 image::amphibians.png[]
 
 Given the distribution of Amphibians, a good rule for the high taxon Amphibians would be : 
@@ -210,7 +210,7 @@ For example, a rule could exclude a certain group
 
 `rule` -> `taxon` in `geo-polygon` are `controlled vocabulary` except `taxon x`
 
-`rule` -> *Amphibians* in *Antartica* are *Suspicious* except **Antartic frogs** 
+`rule` -> *Amphibians* in *Antarctica* are *Suspicious* except **Antartic frogs** 
 
 .https://edition.cnn.com/2020/04/23/world/antarctica-first-frog-species-scn/index.html[Frog article]
 image::frogs.png[]
@@ -225,7 +225,7 @@ In our rule-based system, unlike perhaps other platforms, we are not striving to
 
 ==== Controlled vocabulary 
 
-We might consider using the prexisting vocabulary, although we are attempting to annotate land area (ranges) more than we are attempting annotate occurrence records. 
+We might consider using the preexisting vocabulary, although we are attempting to annotate land area (ranges) more than we are attempting annotate occurrence records. 
 
 https://registry.gbif.org/vocabulary/DegreeOfEstablishment/concepts
 
@@ -344,9 +344,20 @@ R offers distinct advantages over a graphical UI in certain contexts.
 
 Identify potential pilot users who are actively engaged in biodiversity research, data annotation, or related fields. Consider reaching out to academic researchers and enthusiasts.
 
-==== Seeding Data 
+==== Seeding rulesets 
 
-Add data that already exists like from the GBIF distribution extension. 
+Seeding `rulesets` into our annotation several benefits, especially when it comes to improving user experience. Seeding data can help new users get acquainted with the annotation system more quickly. By providing sample data or pre-existing annotations, users can learn how the system works and what is expected of them in terms of annotation tasks. This can reduce the learning curve and increase user engagement. 
+
+Seeding data with known annotations can also serve as a benchmark for quality assurance. Users can compare their annotations with the existing ones to ensure accuracy and consistency. This helps maintain high data quality standards, especially in applications like machine learning where training data quality is crucial. Users can be more productive when they have access to seeded data. They can start their annotation tasks immediately instead of filling in well-known information. 
+
+Providing users with seeded data can make the annotation process more engaging and rewarding. When users see that their annotations contribute to a dataset that already contains valuable information, they are more likely to stay engaged and continue using the system over the long term.
+
+.A table of planned seeds. 
+[width="100%",options="header,footer"]
+|====================
+|  
+|  
+|====================
 
 ==== Data paper 
 

@@ -60,7 +60,6 @@ image::penguins.png[]
 
 Using a small controlled vocabulary over in an annotation system offers several advantages to downstream users. While controlled vocabularies offer simplicity, it's essential to strike a balance. Overly restrictive controlled vocabularies can limit the ability to annotate all concepts. Therefore, finding the right level of granularity and flexibility within the controlled vocabulary is key to reaping the benefits while accommodating the specific needs of the annotation user.
 
-
 .Example annotation that marks any occurrences of lions in Greenland as suspicious. It is left to the users to decide what to do with this information. 
 image::image3.png[width=80%]
 
@@ -80,9 +79,9 @@ Other efforts exist to catalogue the ranges of the living world:
 * https://mol.org/[Map of life]
 * https://www.inaturalist.org/pages/atlases[iNaturalist atlases]
 
-While these efforts are exteremely useful and well-developed, none of them are expressly focused on data quality. Namely, none of these systems allow users to easily state with a simple controlled vocabulary and rules where occurrences for a species are likley and unlikley. 
+While these efforts are useful and well-developed, none of them are expressly focused on data quality. Namely, none of these systems allow users to easily state with a simple controlled vocabulary and rules where occurrences for a species are likely and unlikely. 
 
-.Our system allows users to annoate at an granular scale. For example, this annoation marks all occurrences that happen to be near this greenhouse as "managed".
+.Our system allows users to annotate at an granular scale. For example, this annoation marks all occurrences that happen to be near this greenhouse as "managed".
 image::image4.png[]
 
 === Techinical Details
@@ -119,7 +118,7 @@ A `taxon` in our system is going to be a GBIF `taxonKey` so rules are more likel
 
 We have found in initial testing that only being able to annotate land areas (a geo-polygon) is restrictive, so it is anticipated that certain extensions to this basic formula might be supported. 
 
-For example, often occurrence records can be supicious but still be in a somewhat plausible location. A natural way to handle such cases would be to allow for rules with GBIF `datasetKey`. 
+For example, often occurrence records can be suspicious but still be in a somewhat plausible location. A natural way to handle such cases would be to allow for rules with GBIF `datasetKey`. 
 
 `rule` ->  `taxon` in `geo-polygon` and `datasetKey` are `controlled vocab`  
 

@@ -179,13 +179,13 @@ Within a `project`, only users with access, granted by the project creator, will
 
 ==== Sharing rules 
 
-It is also anticipated that a desirable feature would allow users to "borrow" `rule` or geo-polygon from another `ruleset` and assign a new taxonKey or add a rule extension. This will reduce the storage strains on GBIF and prevent dupicate work.  
+It is also anticipated that a desirable feature would allow users to "borrow" `rule` or geo-polygon from another `ruleset` and assign a new taxonKey or add a rule extension. This will reduce the storage strains on GBIF and prevent duplicate work.  
 
 For example, a common `rule` might be to mark something in the ocean as suspicious. A user should be able apply this rule to a new taxonKey without creating a new ocean polygon every time. 
 
 ==== Voting 
 
-For downstream users, deciding which `rule` and `rulesets` to use might become challenging without some quality control. Currently, we imagine a simple upvote-downvote system on `rule`, `ruleset`, and perhaps `project`. With voting users could see what annotations are supported by the broader community, and create cleaning scripts that are only use annoatations supported by the community. 
+For downstream users, deciding which `rule` and `rulesets` to use might become challenging without some quality control. Currently, we imagine a simple upvote-downvote system on `rule`, `ruleset`, and perhaps `project`. With voting users could see what annotations are supported by the broader community, and create cleaning scripts that are only use annotations supported by the community. 
 
 Additionally, voting could provide protection against **vandalism**. 
 
@@ -198,7 +198,7 @@ image::amphibians.png[]
 
 Given the distribution of Amphibians, a good rule for the high taxon Amphibians would be : 
 
-`rule` -> *Amphibians* in *Antartica* are *Suspicious*
+`rule` -> *Amphibians* in *Antarctica* are *Suspicious*
 
 Once challenge is that is is hard to downcast annotations like "Native" to lower levels, since species of a big group tend not to be "Native" to exactly the same areas. 
 
@@ -276,7 +276,7 @@ This vocabulary is meant to be a compromise between modeling species ranges and 
 The current vocabulary might change in the future. Namely, there has been some discussion introducing hierarchy such that perhaps certain terms map to `present` or `absent` for example. 
 
 .A burning question at this point might be why not annotate occurrences directly? 
-==== Why not annotate occurrenes directly?
+==== Why not annotate occurrences directly?
 
 Annotating land areas (and extensions) provide at least two advanateges over annotating occurrences: 
 
@@ -340,7 +340,7 @@ It is anticipated that the most efficient way to interact with the rule store wi
 
 R offers distinct advantages over a graphical UI in certain contexts. 
 
-==== Introuction to pilot users
+==== Introduction to pilot users
 
 Identify potential pilot users who are actively engaged in biodiversity research, data annotation, or related fields. Consider reaching out to academic researchers and enthusiasts.
 
@@ -360,7 +360,7 @@ A https://www.gbif.org/hosted-portal[hosted portal] is a simple, branded and ful
 
 This service is designed to support biodiversity data use and engagement at national, institutional, regional and thematic scales.
 
-==== Ingegration with GBIF.org
+==== Integration with GBIF.org
 
 2025
 

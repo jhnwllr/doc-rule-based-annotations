@@ -26,17 +26,16 @@ Write summary after finished first draft.
 
 ==== Data cleaning
 
-https://www.gbif.org/[The Global Biodiversity Information Facility] (GBIF) is a vital data infrastruture for researchers, conservationists, and policymakers across the globe. It aggregates and mediates access to extensive datasets of biodiversity occurrence records, thereby fostering scientific research, conservation efforts, and informed decision-making. Nevertheless, the quality of these records is pivotal for their "fitness for use", and data cleaning becomes an essential process to ensure their reliability and utility.
+https://www.gbif.org/[The Global Biodiversity Information Facility] (GBIF) is a vital data infrastructure for researchers, conservationists, and policymakers across the globe. It aggregates and mediates access to extensive datasets of biodiversity occurrence records, thereby fostering scientific research, conservation efforts, and informed decision-making. Nevertheless, the quality of these records is pivotal for their "fitness for use", and data cleaning becomes an essential process to ensure their reliability and utility.
 
 In recent years, the significance of occurrence data quality in scientific research and decision-making has gained  recognition. As the volume and complexity of occurrence data continue to grow, the need for automated data cleaning tools has become more pronounced. R packages like https://docs.ropensci.org/CoordinateCleaner/[CoordinateCleaner] (2018) have played a key role in addressing this need, providing efficient and user-friendly solutions for common data quality issues. 
 
 .Lions in Europe and North America? It is common for GBIF maps to be confusing for users. Most GBIF users are not interested in records from zoos, fossils, or locations that might just be wrong, and GBIF mediated data is often not consistently rich enough to filter unwanted records.
 image::image2.png[width=80%]
 
-
 ==== Fixing at source 
 
-A competeing viewpoint with regard to data cleaning is to "fix at source". Fixing GBIF occurrence data at the source, such as reaching out to data publishers to address issues and errors in their datasets, is an ideal approach in theory. However, in practice, this approach often encounters challenges, primarily because publishers may not respond to emails or communication attempts. It's essential to bear in mind that rule-based annotations can contribute to rectifying data problems at their origin as well. Additionally, it is often the case that records do not need to be fixed, but merely are  not acceptable for a certain application, such as species distribution mapping. 
+A competing viewpoint with regard to data cleaning is to "fix at source". Fixing GBIF occurrence data at the source, such as reaching out to data publishers to address issues and errors in their datasets, is an ideal approach in theory. However, in practice, this approach often encounters challenges, primarily because publishers may not respond to emails or communication attempts. It's essential to bear in mind that rule-based annotations can contribute to rectifying data problems at their origin as well. Additionally, it is often the case that records do not need to be fixed, but merely are  not acceptable for a certain application, such as species distribution mapping. 
 
 .A rule is a combination of geographic, taxonomic, and geographic information that facilitates data cleaning or analysis.
 ==== Motivation 
@@ -56,7 +55,7 @@ A rule-based annotation system, especially one used for annotating complex datas
 
 One of the key ways to increase usability and complexity is to introduce a controlled vocabulary. 
 
-."Penguins released in Norway". While the most accurate description of this event is the sentence above, a more useful rule might be "Penguins in Norway are suspicious" .
+."Penguins released in Norway". While the most accurate description of this event is the sentence above, a more useful rule might be "Penguins in Norway are suspicious".
 image::penguins.png[]
 
 Using a small controlled vocabulary over in an annotation system offers several advantages to downstream users. While controlled vocabularies offer simplicity, it's essential to strike a balance. Overly restrictive controlled vocabularies can limit the ability to annotate all concepts. Therefore, finding the right level of granularity and flexibility within the controlled vocabulary is key to reaping the benefits while accommodating the specific needs of the annotation user.
@@ -81,7 +80,7 @@ Other efforts exist to catalogue the ranges of the living world:
 * https://mol.org/[Map of life]
 * https://www.inaturalist.org/pages/atlases[iNaturalist atlases]
 
-While these efforts are exteremely useful and well-developed, none of them are expressely focussed on data quality. Namely, none of these systems allow users to easily state with a simple controlled vocabulary and rules where occurrences for a species are likley and unlikley. 
+While these efforts are exteremely useful and well-developed, none of them are expressly focused on data quality. Namely, none of these systems allow users to easily state with a simple controlled vocabulary and rules where occurrences for a species are likley and unlikley. 
 
 .Our system allows users to annoate at an granular scale. For example, this annoation marks all occurrences that happen to be near this greenhouse as "managed".
 image::image4.png[]
@@ -159,8 +158,6 @@ For example, a `ruleset`  could be "Annotations of the Genus Leo", and it could 
 
 A `project` is a collection of `rulesets`.   
 
-(add section about permissions and collaboration) 
-
 Projects are designed to allow for collaboration between users and logical grouping of `rulesets`. For example, a `ruleset` could focus on Lions, but be part of a bigger `project` about cleaning up Mammal occurrence records. 
 
 .Example Project Mammals
@@ -175,9 +172,15 @@ Projects are designed to allow for collaboration between users and logical group
 
 Note how a `project` can encode knowledge from other sources into a `ruleset`, such as https://www.inaturalist.org/pages/atlases[iNaturalist atlases]. 
 
+==== Collaboration 
+
+We hope that users will collaborate on a `project` that interests them and create `rulesets` that are widely beneficial to others within their research community. 
+
+Within a `project`, only users with access, granted by the project creator, will be able to create rules and rulesets. However, rules, rulesets, and projects will all be open and publicly available. 
+
 ==== Sharing rules 
 
-It is also anticipated that a desirable feature would allow users to "borrow" `rule` from another `ruleset` and assign a new taxonKey or extension. This will reduce the storage strains on GBIF and prevent dupicate work.  
+It is also anticipated that a desirable feature would allow users to "borrow" `rule` or geo-polygon from another `ruleset` and assign a new taxonKey or add a rule extension. This will reduce the storage strains on GBIF and prevent dupicate work.  
 
 For example, a common `rule` might be to mark something in the ocean as suspicious. A user should be able apply this rule to a new taxonKey without creating a new ocean polygon every time. 
 
@@ -219,7 +222,7 @@ A work around to *rule exceptions* could of course be rules that simply *conflic
 
 Inevitably, there are going to be rules created in our system that conflict. For example, a user might mark and area as "Native", while another user will mark the same area as "Suspicious". 
 
-In our rule-based system, unlike perhaps other platforms, we are not striving to create a single ground truth. We aim only to have a collection of useful opinions, and we leave it to the end user to decide what to do with the information.  
+In our rule-based system, unlike perhaps other platforms, we are not striving to create a single ground truth. We aim only to have a collection of useful opinions, and we leave it to the end user to decide what to do with the information. 
 
 ==== Controlled vocabulary 
 
@@ -241,12 +244,12 @@ Below is the working controlled vocabulary for location-based annotations.
 | Suspicious | Occurrences occuring in the designated area might be in error in some way. 
 |====================
 
-This vocabulary is meant to be a compormise between modeling species ranges and establishment means accurately, while not being overly complex. 
+This vocabulary is meant to be a compromise between modeling species ranges and establishment means accurately, while not being overly complex. 
 
 .Example mappings
 [width="100%",options="header,footer"]
 |====================
-|concept    |	example
+|concept    | example
 |native	    | extant
 |native	    | endemic
 |native	    | indigenous
@@ -280,6 +283,10 @@ Annotating land areas (and extensions) provide at least two advanateges over ann
 
 1. Avoids the use of https://www.gbif.org/news/2M3n65fHOhvq4ek5oVOskc/new-processing-routine-improves-stability-of-gbif-occurrence-ids[unstable gbifIds]. 
 2. Allows for future occurrences to benefit from the annotation. 
+
+==== Rule license 
+
+(Should rules have a usage license?)
 
 === User Guide 
 

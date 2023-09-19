@@ -84,7 +84,7 @@ While these efforts are useful and well-developed, none of them are expressly fo
 .Our system allows users to annotate at an granular scale. For example, this annoation marks all occurrences that happen to be near this greenhouse as "managed".
 image::image4.png[]
 
-=== Techinical Details
+=== Technical Details
 
 ==== Rules
 
@@ -223,6 +223,17 @@ Inevitably, there are going to be rules created in our system that conflict. For
 
 In our rule-based system, unlike perhaps other platforms, we are not striving to create a single ground truth. We aim only to have a collection of useful opinions, and we leave it to the end user to decide what to do with the information. 
 
+==== Rules with more than one taxon
+
+It might be efficient in some circumstances to express rules with more than one taxon: 
+
+rule -> `taxon_1` + `taxon_2` `...` in `geo-polygon` are `controlled vocabulary`
+
+One useful example would be marking all https://www.marinespecies.org/[marine species] on land as suspicious. 
+
+rule -> *Marine species on WORMS list* in *Land Polygon* are *Suspicious* 
+
+
 ==== Controlled vocabulary 
 
 We might consider using the preexisting vocabulary, although we are attempting to annotate land area (ranges) more than we are attempting annotate occurrence records. 
@@ -338,8 +349,6 @@ http://labs.gbif.org:7013/swagger-ui/index.html[API Docs]
 
 It is anticipated that the most efficient way to interact with the rule store will be via R. 
 
-R offers distinct advantages over a graphical UI in certain contexts. 
-
 ==== Introduction to pilot users
 
 Identify potential pilot users who are actively engaged in biodiversity research, data annotation, or related fields. Consider reaching out to academic researchers and enthusiasts.
@@ -352,11 +361,12 @@ Seeding data with known annotations can also serve as a benchmark for quality as
 
 Providing users with seeded data can make the annotation process more engaging and rewarding. When users see that their annotations contribute to a dataset that already contains valuable information, they are more likely to stay engaged and continue using the system over the long term.
 
-.A table of planned seeds. 
+.A table of examples ruleset seeds. 
 [width="100%",options="header,footer"]
 |====================
-|  
-|  
+|  https://www.gbif.org/dataset/f382f0ce-323a-4091-bb9f-add557f3a9a2[World Checklist of Vascular Plants]
+|  https://rs.gbif.org/extension/gbif/1.0/distribution_2022-02-02.xml[GBIF Species Distribution Extension]
+|
 |====================
 
 ==== Data paper 
